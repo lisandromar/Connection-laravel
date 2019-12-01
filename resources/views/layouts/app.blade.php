@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -26,7 +27,7 @@
     <div id="app">
     <header class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-dark "  >
-      <a class="navbar-brand text-secondary " href="#">Connection</a>
+      <a class="navbar-brand text-secondary " href="/">Connection</a>
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto  ">
           <li class="nav-item">
@@ -53,6 +54,12 @@
         <form class="form-inline my-2 my-lg-0">
           <!-- Authentication Links -->
           @guest
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('administrarPosteos') }}">{{ __('Administrar Posteos') }}</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('administrarUsuarios') }}">{{ __('Administrar Usuarios') }}</a>
+              </li>
               <li class="nav-item">
                   <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
               </li>

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->int('role');
+            $table->unsignedBigInteger('posteo_id');
         });
     }
 
