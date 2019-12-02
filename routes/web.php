@@ -30,3 +30,15 @@ Route::get('/detallePosteo/{id}','AdminPosteosController@show')->name('detallePo
 Route::get('/administrarUsuarios', 'AdminUsuariosController@index')->name('administrarUsuarios');
 
 Route::get('/detalleUsuario/{id}','AdminUsuariosController@show');
+
+//Ruta para buscar posteos
+Route::get('/buscarPosteo','AdminPosteosController@search');
+
+//Ruta para eliminar un posteo
+Route::get('/eliminarPosteo/{id}','AdminPosteosController@delete');
+
+//Ruta para buscar usuarios
+Route::get('/buscarUsuario','AdminUsuariosController@search');
+
+//Ruta para eliminar un posteo
+Route::get('/eliminarUsuario/{id}','AdminUsuariosController@delete');

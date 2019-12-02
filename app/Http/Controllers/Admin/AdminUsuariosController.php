@@ -20,4 +20,18 @@ class AdminUsuariosController extends Controller
 
     return view('admin.detalleUsuario',compact('posteos','user'));
   }
+
+  public function search(Request $request){
+      $buscar = $request->busqueda;
+      $users = User::where('name','like','%'.$buscar.'%')->paginate(10);
+      return view('admin.listadoUsuarios')->with('users',$users);
+
+  }
+  public function delete($id){
+    $users =  User::find($id);
+    $users->delete();
+    return redirect('admin.listadoUsuarios');
+
+  }
+
 }
