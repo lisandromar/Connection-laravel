@@ -4,17 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\posteo;
+use App\User;
 
 class PosteosController extends Controller
 {
-    public function postear(){
-        return view('posteos');
+    
 
-    }
-    public function index()
-    {
-        //
-    }
+   
 
     /**
      * Show the form for creating a new resource.
@@ -23,7 +19,8 @@ class PosteosController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('posteos.agregarPosteos');
     }
 
     /**
@@ -43,9 +40,11 @@ class PosteosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show(){
+        $users = User::all();
+        $posteos = Posteo::all();
+      
+        return view('posteos.listadoPosteos',compact('posteos','users'));
     }
 
     /**
@@ -56,7 +55,7 @@ class PosteosController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('posteos.editarPosteos');
     }
 
     /**
@@ -79,6 +78,6 @@ class PosteosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return view('posteos.eliminarPosteos');
     }
 }

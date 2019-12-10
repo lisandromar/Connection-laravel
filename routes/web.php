@@ -18,7 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/posteos', 'PosteosController@postear')->name('posteos');
+
+// Rutas para Posteos  
+Route::get('/posteos', 'PosteosController@show')->name('posteos');
+Route::get('/agregarPosteo', 'PosteosController@create')->name('agregarPosteo');
+//Route::get('/posteos', 'PosteosController@edit')->name('editarPosteos');
+//Route::get('/posteos', 'PosteosController@destroy')->name('eliminarPosteos');
 
 
 // Rutas para la administracion de la pagina
