@@ -19,11 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Rutas para Posteos  
+// Rutas para Posteos
 Route::get('/posteos', 'PosteosController@show')->name('posteos');
 Route::get('/agregarPosteo', 'PosteosController@create')->name('agregarPosteo');
 //Route::get('/posteos', 'PosteosController@edit')->name('editarPosteos');
 //Route::get('/posteos', 'PosteosController@destroy')->name('eliminarPosteos');
+Route::get('/buscarPosteo','PosteosController@search');
+
+
 
 
 // Rutas para la administracion de la pagina
@@ -37,7 +40,7 @@ Route::get('/administrarUsuarios', 'AdminUsuariosController@index')->name('admin
 Route::get('/detalleUsuario/{id}','AdminUsuariosController@show');
 
 //Ruta para buscar posteos
-Route::get('/buscarPosteo','AdminPosteosController@search');
+Route::get('/buscarPosteoAdmin','AdminPosteosController@search');
 
 //Ruta para eliminar un posteo
 Route::get('/eliminarPosteo/{id}','AdminPosteosController@delete');

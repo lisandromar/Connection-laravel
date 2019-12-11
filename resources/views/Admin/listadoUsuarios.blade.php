@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+  <br>
+  <br>
     <h2 class="text-center">Listado de Usuarios</h2>
     <div>
     <form action="/buscarUsuario" method="GET">
@@ -30,9 +32,7 @@
                 </tr>
 
             @endforeach
-        <tr>
 
-        </tr>
         </tbody>
     </table>
     <div>

@@ -1,9 +1,11 @@
 @extends('layouts.app')
 @section('content')
+    <br>
+    <br>
     <h2 class="text-center">Listado de Posteos</h2>
     <div>
-    <form action="/buscarPosteo" method="GET">
-        @csrf
+    <form action="/buscarPosteoAdmin" method="GET">
+
         <input type="submit" value="Buscar"><input type="text" name="busqueda">
     </form>
     </div>
@@ -23,12 +25,14 @@
         <tbody>
 
             @foreach ($posteos as $key => $value)
+              <tr>
                 <td>{{$value->comentario}}</td>
                 <td>{{$value->archivo}}</td>
                 <td>{{$value->user_id}}</td>
                 <td><a href="/detallePosteo/{{$value->id}}"><ion-icon name="eye"></ion-icon></a></td>
                 {{-- <td><a href="/editarPosteo/{{$value->id}}"><ion-icon name="create"></ion-icon></a></td> --}}
                 <td><a href="/eliminarPosteo/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
+              </tr>
             @endforeach
 
         </tbody>

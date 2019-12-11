@@ -8,9 +8,9 @@ use App\User;
 
 class PosteosController extends Controller
 {
-    
 
-   
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -20,7 +20,7 @@ class PosteosController extends Controller
     public function create()
     {
 
-        return view('posteos.agregarPosteos');
+        return view('posteos.agregarPosteo');
     }
 
     /**
@@ -42,8 +42,8 @@ class PosteosController extends Controller
      */
     public function show(){
         $users = User::all();
-        $posteos = Posteo::all();
-      
+        $posteos = Posteo::Paginate(10);
+
         return view('posteos.listadoPosteos',compact('posteos','users'));
     }
 
@@ -79,5 +79,12 @@ class PosteosController extends Controller
     public function destroy($id)
     {
         return view('posteos.eliminarPosteos');
+    }
+
+    public function search(Request $request){
+        $buscar = $request->busqueda;
+        $posteos = Posteo::where('comentario','like','%'.$buscar.'%')->paginate(10);
+        return view('posteos.listadoPosteos')->with('posteos',$posteos);
+
     }
 }

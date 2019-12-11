@@ -16,8 +16,8 @@ class AdminUsuariosController extends Controller
 
   public function show($id){
     $user = User::find($id);
-    $posteos = Posteo::find($user->Posteos);
-
+    $posteos = Posteo::find($user->posteos);
+    //dd($posteos);
     return view('admin.detalleUsuario',compact('posteos','user'));
   }
 
