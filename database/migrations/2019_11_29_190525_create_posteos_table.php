@@ -18,6 +18,7 @@ class CreatePosteosTable extends Migration
             $table->timestamps();
             $table->char('archivo');
             $table->char('comentario');
+            $table->boolean('activo');
             $table->unsignedBigInteger('user_id');
 
         });

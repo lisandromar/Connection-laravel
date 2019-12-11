@@ -21,8 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->int('role');
-            $table->unsignedBigInteger('posteo_id');
+            $table->integer('role')->default(1);
+            $table->boolean('activo')->default(1);
+            $table->unsignedBigInteger('posteo_id')->nullable();
         });
     }
 
