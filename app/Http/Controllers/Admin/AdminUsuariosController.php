@@ -16,7 +16,8 @@ class AdminUsuariosController extends Controller
 
   public function show($id){
     $user = User::find($id);
-    $posteos = Posteo::find($user->posteos);
+    $posteos = Posteo::where('user_id',$id)->paginate(10);
+
     //dd($posteos);
     return view('admin.detalleUsuario',compact('posteos','user'));
   }

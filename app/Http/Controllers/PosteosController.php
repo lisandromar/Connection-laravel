@@ -86,5 +86,5 @@ class PosteosController extends Controller
         $posteos = Posteo::where('comentario','like','%'.$buscar.'%')->paginate(10);
         return view('posteos.listadoPosteos')->with('posteos',$posteos);
 
-    }
+    } 
 }
