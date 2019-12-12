@@ -9,6 +9,10 @@ class Posteo extends Model
 {
   protected $guarded = [];
 
+  protected $hidden = [
+      'activo',
+  ];
+
 public function users(){
     return $this->belongsToMany(User::class);
   }

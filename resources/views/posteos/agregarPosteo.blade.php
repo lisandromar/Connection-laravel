@@ -15,32 +15,25 @@
                 </ul>
             @endif -->
 
-            <form action="/guardarPelicula" method="POST" enctype="multipart/form-data">
+            <form action="/guardarPosteo" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="nombrePelicula">Que estás escuchando?</label>
-                    <input type="text" class="form-control" name="title" id="nombrePelicula" value="">
+                    <label for="comentario">Que estás escuchando?</label>
+                    <input type="text" class="form-control" name="comentario" id="comentario" value="">
 
                 </div>
 
                 <div class="form-group">
-                        <label for="poster">Carga tu Track</label>
-                        <input type="file" class="form-control" name="poster" id="poster" value="">
+                        <label for="archivo">Carga tu Track</label>
+                        <input type="file" class="form-control" name="archivo" id="archivo" value="">
                 </div>
-                    
+
+
+
                 <button type="submit" class="btn btn-primary">Postear</button>
             </form>
-            
+
         </div>
     </div>
     </div>
 @endsection
-
-
-
-
-
-
-
-
-

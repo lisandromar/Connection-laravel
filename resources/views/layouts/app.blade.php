@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Connection') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -53,7 +53,7 @@
 
               @else
                 <li class="nav-item">
-                  <a class="nav-link  text-secondary" href="posteos/{{Auth::user()->id}}">{{ __('Muro') }}</a>
+                  <a class="nav-link  text-secondary" href="{{ route('posteos') }}">{{ __('Muro') }}</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-secondary" href="Perfil/posteos_y_amigos.php">Comunidad</a>
