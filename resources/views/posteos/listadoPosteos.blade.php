@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-  <br>
+  
   <br>
     <h2 class="text-center">Listado de Posteos</h2>
     <div>

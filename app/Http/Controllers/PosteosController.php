@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\posteo;
+use App\Posteo;
 use App\User;
+
 
 class PosteosController extends Controller
 {
@@ -40,9 +41,17 @@ class PosteosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(){
-        $users = User::all();
+    public function show($miId){
+        //dd(Auth::user()->id);
+        //$miUser = User::find(Auth::user()->id);
+        //dd($miUser);
+        //$amigos=User::find();
         $posteos = Posteo::Paginate(10);
+        $users = User::all();
+
+        //$miId= Auth::user()->id;
+        // $miUsuario= User::where('id',$miId);
+        //$posteos=Posteo::where('user_id',$miId)->paginate(10);
 
         return view('posteos.listadoPosteos',compact('posteos','users'));
     }
@@ -86,5 +95,5 @@ class PosteosController extends Controller
         $posteos = Posteo::where('comentario','like','%'.$buscar.'%')->paginate(10);
         return view('posteos.listadoPosteos')->with('posteos',$posteos);
 
-    } 
+    }
 }

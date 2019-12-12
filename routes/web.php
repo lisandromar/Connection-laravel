@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Rutas para Posteos
-Route::get('/posteos', 'PosteosController@show')->name('posteos');
+Route::get('/posteos/{miId}', 'PosteosController@show')->name('posteos');
 Route::get('/agregarPosteo', 'PosteosController@create')->name('agregarPosteo');
 //Route::get('/posteos', 'PosteosController@edit')->name('editarPosteos');
 //Route::get('/posteos', 'PosteosController@destroy')->name('eliminarPosteos');
