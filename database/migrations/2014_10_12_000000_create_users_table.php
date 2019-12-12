@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->integer('role')->default(1);
             $table->boolean('activo')->default(1);
-            $table->unsignedBigInteger('posteo_id')->nullable();
+            
         });
     }
 

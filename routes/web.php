@@ -24,7 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/posteos', 'PosteosController@show')->name('posteos');
 // Ruta para crear mis posteos
 Route::get('/agregarPosteo', 'PosteosController@create')->name('agregarPosteo');
-// Ruta por POST para guardar la película metodo: save
+// Ruta por POST para guardar los posteos, metodo: save
 Route::post('/guardarPosteo','PosteosController@save');
 // Ruta para buscar posteos de mis amigos
 Route::get('/buscarPosteo','PosteosController@search');

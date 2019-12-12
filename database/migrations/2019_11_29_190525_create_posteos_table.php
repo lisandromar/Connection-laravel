@@ -20,7 +20,7 @@ class CreatePosteosTable extends Migration
             $table->char('comentario');
             $table->boolean('activo')->default(1);
             $table->unsignedBigInteger('user_id')->nullable();
-
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

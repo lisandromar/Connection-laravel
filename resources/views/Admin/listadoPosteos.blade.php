@@ -19,7 +19,7 @@
             <th>Usuario</th>
             <th>Ver</th>
             {{-- <th>Editar</th> --}}
-            <th>Eliminar</th>
+            <th>Desactivar</th>
         </tr>
         </thead>
         <tbody>

@@ -40,6 +40,10 @@ class User extends Authenticatable
 
 
   public function posteos(){
-      return $this->belongsToMany(Posteo::class);
+      return $this->hasMany(Posteo::class);
     }
+
+    public function users(){
+        return $this->belongsToMany(User::class);
+      }
 }
