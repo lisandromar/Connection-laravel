@@ -3,6 +3,8 @@
 
 @extends('layouts.app')
 @section('content')
+    <br>
+    <br>
     <h2 class="text-center">Postear</h2>
     <div class="container-fluid">
         <div class="row mt-5">

@@ -29,6 +29,12 @@ Route::post('/guardarPosteo','PosteosController@save');
 // Ruta para buscar posteos de mis amigos
 Route::get('/buscarPosteo','PosteosController@search');
 
+// Rutas para el Perfil
+// Ruta para acceder a la vista del perfil
+Route::get('/perfil', 'PerfilController@show')->name('perfil');
+// Ruta para cargar foto de Perfil
+Route::post('/foto', 'PerfilController@save');
+
 
 //Route::get('/posteos', 'PosteosController@edit')->name('editarPosteos');
 //Route::get('/posteos', 'PosteosController@destroy')->name('eliminarPosteos');

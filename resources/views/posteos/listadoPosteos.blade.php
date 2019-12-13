@@ -29,12 +29,12 @@
         </thead>
         <tbody>
 
-            @foreach ($posteos as $key => $value)
+            @foreach ($posteos as $posteo)
               <tr>
                 {{-- <td>{{$value->avatar}}</td> --}}
-                <td>{{$value->user_id}}</td>
-                <td>{{$value->comentario}}</td>
-                <td>{{$value->archivo}}</td>
+                <td>{{$posteo->user_id}}</td>
+                <td>{{$posteo->comentario}}</td>
+                <td>{{$posteo->archivo}}</td>
                 {{-- <td><a href="/editarPosteo/{{$value->id}}"><ion-icon name="create"></ion-icon></a></td> --}}
                 {{-- <td><a href="/eliminarPosteo/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a> --}}
               </tr>

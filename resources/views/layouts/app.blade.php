@@ -53,10 +53,10 @@
 
               @else
                 <li class="nav-item">
-                  <a class="nav-link  text-secondary" href="{{ route('posteos') }}">{{ __('Muro') }}</a>
+                  <a class="nav-link  text-secondary" href="{{ route('posteos') }}">{{ __('Comunidad') }}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-secondary" href="Perfil/posteos_y_amigos.php">Comunidad</a>
+                  <a class="nav-link text-secondary" href="{{ route('perfil') }}">{{ __('Mi Perfil') }}</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle  text-secondary" href="#" id="navbarDropdown" role="button"
