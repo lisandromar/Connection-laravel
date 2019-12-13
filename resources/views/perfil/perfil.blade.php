@@ -9,7 +9,7 @@
      <h1>Bienvenido: {{Auth::user()->name}}</h1>
      <p>
         <div class="imagen text-center" id="avatar" >
-          {{Auth::user()->avatar}}
+          <img src="{{asset('storage/fotoPerfil/'.Auth::user()->avatar)}}" alt="avatar">
         </div>
      </p>
      <form action="/foto" method="POST" enctype="multipart/form-data">

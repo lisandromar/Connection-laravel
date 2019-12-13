@@ -98,7 +98,7 @@
                   </li>
                   <li class="nav-item dropdown">
                       <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                              <img width="40px" style="border-radius:40%" src="{{asset('storage/avatars/'.Auth::user()->avatar)}}" alt="Avatar">
+                              <img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.Auth::user()->avatar)}}" alt="Avatar">
                           {{ Auth::user()->name }} <span class="caret"></span>
                       </a>
 
@@ -108,10 +108,14 @@
                                            document.getElementById('logout-form').submit();">
                               {{ __('Salir') }}
                           </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    </li>
                     @else
                       <li class="nav-item dropdown">
                           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                  <img width="40px" style="border-radius:40%" src="{{asset('storage/avatars/'.Auth::user()->avatar)}}" alt="Avatar">
+                                  <img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.Auth::user()->avatar)}}" alt="Avatar">
                               {{ Auth::user()->name }} <span class="caret"></span>
                           </a>
 
@@ -121,11 +125,15 @@
                                                document.getElementById('logout-form').submit();">
                                   {{ __('Salir') }}
                               </a>
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              @csrf
+                          </form>
+                          </li>
                         @endif
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
-                    </form>
+                    </form> --}}
                 </div>
 
             </li>

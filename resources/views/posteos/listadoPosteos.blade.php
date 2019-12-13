@@ -6,7 +6,7 @@
     <div>
     <form action="/buscarPosteo" method="GET">
 
-        <input type="submit" value="Buscar"><input type="text" name="busqueda">
+        <input type="submit" value="Buscar Posteo"><input type="text" name="busqueda">
     </form>
     </div>
     <div class="">
@@ -18,28 +18,34 @@
     <table class="table">
         <thead>
         <tr>
-            {{-- <th>Avatar</th> --}}
+            <th>Avatar</th>
             <th>Usuario</th>
             <th>Comentario</th>
             <th>Track Compartido</th>
 
-            {{-- <th>Editar</th> --}}
-            {{-- <th>Eliminar</th> --}}
         </tr>
         </thead>
         <tbody>
 
             @foreach ($posteos as $posteo)
               <tr>
-                {{-- <td>{{$value->avatar}}</td> --}}
+                <td>Avatar</td>
                 <td>{{$posteo->user_id}}</td>
                 <td>{{$posteo->comentario}}</td>
-                <td>{{$posteo->archivo}}</td>
-                {{-- <td><a href="/editarPosteo/{{$value->id}}"><ion-icon name="create"></ion-icon></a></td> --}}
-                {{-- <td><a href="/eliminarPosteo/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a> --}}
+                <td><audio controls="controls ">
+                  <source class="bg-dark" src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/ogg" />
+                  <source src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/mpeg" />
+                  </audio></td>
               </tr>
             @endforeach
 
+            {{-- // Avatar y nombre del Usuario
+            @foreach ($users as $user)
+            <p>
+                    <iframe width="560" height="315" src="{{asset('storage/fotoPerfil/'.$user->avatar)}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h1>{{$user->name}}</h1>
+            </p>
+            @endforeach --}}
         </tbody>
     </table>
     <div>
