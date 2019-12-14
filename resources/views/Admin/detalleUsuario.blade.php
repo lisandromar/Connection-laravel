@@ -22,7 +22,10 @@
 
                             <tr>
                                 <td>{{($posteo->comentario)}}</td>
-                                <td>{{($posteo->archivo)}}</td>
+                                <td><audio controls="controls ">
+                                  <source class="bg-dark" src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/ogg" />
+                                  <source src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/mpeg" />
+                                  </audio></td>
                                 <td>{{($posteo->created_at)}}</td>
                             </tr>
                           @endforeach

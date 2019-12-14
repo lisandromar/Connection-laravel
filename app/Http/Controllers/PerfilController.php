@@ -49,10 +49,12 @@ class PerfilController extends Controller
 			// // Le asigno al usuario logueado la foto que guardamos
       $miUsuario = Auth::user();
       $miUsuario->avatar = $avatarFinal;
-		}
 
       //Invoco al método save para guardar el avatar
       $miUsuario->save();
+		}
+
+
 
         return  redirect('perfil');
     }

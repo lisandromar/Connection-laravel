@@ -6,18 +6,21 @@
         <div class="card w-100">
             <ul class="list-group list-group-flush">
             <li class="list-group-item ">Comentario: {{$posteo->comentario}}</li>
-            <li class="list-group-item ">Archivo: {{$posteo->archivo}}</li>
+            <li class="list-group-item ">Archivo: <audio controls="controls ">
+              <source class="bg-dark" src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/ogg" />
+              <source src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/mpeg" />
+              </audio></li>
             <li class="list-group-item ">Fecha y Hora: {{$posteo->created_at}}</li>
 
 
-                <li class="list-group-item">Usuario: @foreach ($users as $user)
+                <li class="list-group-item">Usuario:
                                                       <ul>
-                                                        <li>{{"Nombre: ".($user->name)}}</li>
-                                                        <li>{{"Email: ".($user->email)}}</li>
-                                                        <li>{{"ID: ".($user->id)}}</li>
+                                                        <li>{{"Nombre: ".$users->name}}</li>
+                                                        <li>{{"Email: ".$users->email}}</li>
+                                                        <li>{{"ID: ".$users->id}}</li>
                                                         <li></li>
                                                       </ul>
-                                                      @endforeach</li>
+                                                    </li>
 
             </ul>
 

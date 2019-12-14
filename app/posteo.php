@@ -13,6 +13,10 @@ class Posteo extends Model
       'activo',
   ];
 
+  public function userId(){
+    return $this->user_id;
+  }
+
 public function users(){
     return $this->belongsTo(User::class);
   }
