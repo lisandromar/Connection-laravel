@@ -9,7 +9,7 @@ use App\Posteo;
 class AdminPosteosController extends Controller
 {
   public function index(){
-  $posteos = Posteo::paginate(10);
+  $posteos = Posteo::with('user')->paginate(10);
   $users = User::all();
   return view('admin.listadoPosteos',compact('posteos','users'));
 }
@@ -18,7 +18,7 @@ public function show($id){
   $posteo = Posteo::find($id);
   $userId=$posteo->userId();
   $users = User::find($userId);
-  
+
   return view('admin.detallePosteo',compact('posteo','users'));
 }
 

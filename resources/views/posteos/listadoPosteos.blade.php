@@ -29,8 +29,8 @@
 
             @foreach ($posteos as $posteo)
               <tr>
-                <td>Avatar</td>
-                <td>{{$posteo->user_id}}</td>
+                <td><div class=""><img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.$posteo->user->avatar)}}"></div> </td>
+                <td>{{$posteo->user->name}}</td>
                 <td>{{$posteo->comentario}}</td>
                 <td><audio controls="controls ">
                   <source class="bg-dark" src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/ogg" />

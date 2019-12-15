@@ -81,22 +81,15 @@ class PosteosController extends Controller
     public function show(){
 
         $users=User::all();
-        $posteos=Posteo::all();
-
         //dd(Auth::user()->id);
         //$miUser = User::find(Auth::user()->id);
         //dd($miUser);
         //$amigos=User::find();
 
         // $miId=Auth::user()->id;
-        // $users = User::where('user_id',$miId,'&&','status','1','||','id',$miId);
-        // $posteos = Posteo::where('user_id',$users);
-
-        // Mostrar titulos de peliculas y genero
-        // select movies.title, genres.name
-        // from movies, genres
-        // where movies.genre_id=genres.id
-        // order by movies.title desc;
+        // $users = User::where('amigos_usuarios'.'user_id','=',$miId,'&&','amigos_usuarios'.'status','=','1','||','id','=',$miId)->get();
+        // dd($users);
+        $posteos=Posteo::with('user')->get();
 
         //$miId= Auth::user()->id;
         // $miUsuario= User::where('id',$miId);

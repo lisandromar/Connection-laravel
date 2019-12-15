@@ -27,8 +27,11 @@
             @foreach ($posteos as $key => $value)
               <tr>
                 <td>{{$value->comentario}}</td>
-                <td>{{$value->archivo}}</td>
-                <td>{{$value->user_id}}</td>
+                <td><audio controls="controls ">
+                  <source class="bg-dark" src="{{asset('storage/archivos/'.$value->archivo)}}" type="audio/ogg" />
+                  <source src="{{asset('storage/archivos/'.$value->archivo)}}" type="audio/mpeg" />
+                  </audio></td>
+                <td>{{$value->user->name}}</td>
                 <td><a href="/detallePosteo/{{$value->id}}"><ion-icon name="eye"></ion-icon></a></td>
                 {{-- <td><a href="/editarPosteo/{{$value->id}}"><ion-icon name="create"></ion-icon></a></td> --}}
                 <td><a href="/eliminarPosteo/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
