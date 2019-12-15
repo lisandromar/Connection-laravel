@@ -15,8 +15,9 @@
         <tr>
             <th>Usuario</th>
             <th>Email</th>
+            <th>Activo</th>
             <th>Ver</th>
-            {{-- <th>Editar</th> --}}
+            <th>Activar</th>
             <th>Desactivar</th>
         </tr>
         </thead>
@@ -26,9 +27,13 @@
                 <tr>
                 <td>{{($value->name)}}</td>
                 <td>{{$value->email}}</td>
+                <td>@if ($value->activo==1)
+                      {{ "Si"}}
+                    @else {{ "No"}}
+                    @endif</td>
                 <td><a href="/detalleUsuario/{{$value->id}}"><ion-icon name="eye"></ion-icon></a></td>
-                {{-- <td><a href="/editarUsuario/{{$value->id}}"><ion-icon name="create"></ion-icon></a></td> --}}
-                <td><a href="/eliminarUsuario/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
+                <td><a href="/activarUsuario/{{$value->id}}"><ion-icon name="create"></ion-icon></a></td>
+                <td><a href="/desactivarUsuario/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
                 </tr>
 
             @endforeach

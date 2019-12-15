@@ -28,10 +28,19 @@ public function show($id){
       return view('admin.listadoPosteos')->with('posteos',$posteos);
 
   }
-  public function delete($id){
+  public function desactivar($id){
     $posteo =  Posteo::find($id);
-    $posteo->delete();
-    return redirect('admin.listadoPosteos');
+    $posteo->activo=0;
+    $posteo->save();
+    return redirect('administrarPosteos');
+
+  }
+
+  public function activar($id){
+    $posteo =  Posteo::find($id);
+    $posteo->activo=1;
+    $posteo->save();
+    return redirect('administrarPosteos');
 
   }
 

@@ -28,10 +28,19 @@ class AdminUsuariosController extends Controller
       return view('admin.listadoUsuarios')->with('users',$users);
 
   }
-  public function delete($id){
-    $users =  User::find($id);
-    $users->delete();
-    return redirect('admin.listadoUsuarios');
+  public function desactivar($id){
+    $usuario =  User::find($id);
+    $usuario->activo=0;
+    $usuario->save();
+    return redirect('administrarUsuarios');
+
+  }
+
+  public function activar($id){
+    $usuario =  User::find($id);
+    $usuario->activo=1;
+    $usuario->save();
+    return redirect('administrarUsuarios');
 
   }
 

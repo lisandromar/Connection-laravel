@@ -54,11 +54,17 @@ Route::get('/detalleUsuario/{id}','AdminUsuariosController@show');
 //Ruta para buscar posteos por Administrador
 Route::get('/buscarPosteoAdmin','AdminPosteosController@search');
 
-//Ruta para eliminar un posteo por Administrador
-Route::get('/eliminarPosteo/{id}','AdminPosteosController@delete');
-
 //Ruta para buscar usuarios por Administrador
 Route::get('/buscarUsuario','AdminUsuariosController@search');
 
-//Ruta para eliminar un posteo por Administrador
-Route::get('/eliminarUsuario/{id}','AdminUsuariosController@delete');
+//Ruta para desactivar un posteo por Administrador
+Route::get('/desactivarPosteo/{id}','AdminPosteosController@desactivar');
+
+//Ruta para activar un posteo por Administrador
+Route::get('/activarPosteo/{id}','AdminPosteosController@activar');
+
+//Ruta para desactivar un usuario por Administrador
+Route::get('/desactivarUsuario/{id}','AdminUsuariosController@desactivar');
+
+//Ruta para activar un usuario por Administrador
+Route::get('/activarUsuario/{id}','AdminUsuariosController@activar');

@@ -89,7 +89,7 @@ class PosteosController extends Controller
         // $miId=Auth::user()->id;
         // $users = User::where('amigos_usuarios'.'user_id','=',$miId,'&&','amigos_usuarios'.'status','=','1','||','id','=',$miId)->get();
         // dd($users);
-        $posteos=Posteo::with('user')->get();
+        $posteos=Posteo::with('user')->where('activo','=','1')->get();
 
         //$miId= Auth::user()->id;
         // $miUsuario= User::where('id',$miId);
