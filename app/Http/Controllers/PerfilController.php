@@ -14,10 +14,11 @@ class PerfilController extends Controller
     public function show(){
 
         $users=User::all();
-        $posteos=Posteo::all();
+        $misPosteos=Posteo::where('user_id','=',Auth::user()->id)->get();
 
 
-        return view('perfil.perfil',compact('posteos','users'));
+
+        return view('perfil.perfil',compact('misPosteos','users'));
     }
 
     public function save(Request $request)

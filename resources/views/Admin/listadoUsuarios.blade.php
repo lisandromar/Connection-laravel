@@ -32,8 +32,8 @@
                     @else {{ "No"}}
                     @endif</td>
                 <td><a href="/detalleUsuario/{{$value->id}}"><ion-icon name="eye"></ion-icon></a></td>
-                <td><a href="/activarUsuario/{{$value->id}}"><ion-icon name="create"></ion-icon></a></td>
-                <td><a href="/desactivarUsuario/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
+                <td><a href="/activarUsuario/{{$value->id}}"><ion-icon name="thumbs-up"></ion-icon></a></td>
+                <td><a href="/desactivarUsuario/{{$value->id}}"><ion-icon name="thumbs-down"></ion-icon></td></a>
                 </tr>
 
             @endforeach

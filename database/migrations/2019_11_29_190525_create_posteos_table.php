@@ -16,7 +16,7 @@ class CreatePosteosTable extends Migration
         Schema::create('posteos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->char('archivo');
+            $table->char('archivo')->nullable();
             $table->char('comentario');
             $table->boolean('activo')->default(1);
             $table->unsignedBigInteger('user_id')->nullable();

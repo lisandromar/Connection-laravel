@@ -80,22 +80,20 @@ class PosteosController extends Controller
      */
     public function show(){
 
-        $users=User::all();
-        //dd(Auth::user()->id);
-        //$miUser = User::find(Auth::user()->id);
-        //dd($miUser);
-        //$amigos=User::find();
 
+        // Ver posteos solo de Amigos
         // $miId=Auth::user()->id;
         // $users = User::where('amigos_usuarios'.'user_id','=',$miId,'&&','amigos_usuarios'.'status','=','1','||','id','=',$miId)->get();
-        // dd($users);
-        $posteos=Posteo::with('user')->where('activo','=','1')->get();
 
-        //$miId= Auth::user()->id;
-        // $miUsuario= User::where('id',$miId);
-        //$posteos=Posteo::where('user_id',$miId)->paginate(10);
+        $posteosActivos=Posteo::where('activo','=','1')->get();
+        
+        //Ver solamente posteos activos de usuarios activos
+        //$posteos=Posteo::where('activo','=','1')->user()->where('activo','=','1')->get();
 
-        return view('posteos.listadoPosteos',compact('posteos','users'));
+        $posteos= $posteosActivos;
+
+
+        return view('posteos.listadoPosteos',compact('posteos'));
     }
 
     /**

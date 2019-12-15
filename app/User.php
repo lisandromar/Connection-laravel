@@ -40,7 +40,7 @@ class User extends Authenticatable
 
 
   public function posteos(){
-      return $this->hasMany(Posteo::class);
+      return $this->hasMany(Posteo::class,);
     }
 
     public function users(){

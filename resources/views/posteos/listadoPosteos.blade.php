@@ -32,20 +32,15 @@
                 <td><div class=""><img width="40px" style="border-radius:40%" src="{{asset('storage/fotoPerfil/'.$posteo->user->avatar)}}"></div> </td>
                 <td>{{$posteo->user->name}}</td>
                 <td>{{$posteo->comentario}}</td>
-                <td><audio controls="controls ">
-                  <source class="bg-dark" src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/ogg" />
-                  <source src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/mpeg" />
-                  </audio></td>
+                <td>@if ($posteo->archivo)
+                  <audio controls="controls ">
+                    <source class="bg-dark" src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/ogg" />
+                    <source src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/mpeg" />
+                    </audio>
+                  @else {{"No hay archivo"}}
+                @endif</td>
               </tr>
             @endforeach
-
-            {{-- // Avatar y nombre del Usuario
-            @foreach ($users as $user)
-            <p>
-                    <iframe width="560" height="315" src="{{asset('storage/fotoPerfil/'.$user->avatar)}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <h1>{{$user->name}}</h1>
-            </p>
-            @endforeach --}}
         </tbody>
     </table>
     <div>

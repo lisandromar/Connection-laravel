@@ -22,10 +22,13 @@
 
                             <tr>
                                 <td>{{($posteo->comentario)}}</td>
-                                <td><audio controls="controls ">
-                                  <source class="bg-dark" src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/ogg" />
-                                  <source src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/mpeg" />
-                                  </audio></td>
+                                <td>@if ($posteo->archivo)
+                                  <audio controls="controls ">
+                                    <source class="bg-dark" src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/ogg" />
+                                    <source src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/mpeg" />
+                                    </audio>
+                                  @else {{"No hay archivo"}}
+                                @endif</td>
                                 <td>{{($posteo->created_at)}}</td>
                             </tr>
                           @endforeach

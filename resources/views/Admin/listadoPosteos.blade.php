@@ -28,18 +28,21 @@
             @foreach ($posteos as $key => $value)
               <tr>
                 <td>{{$value->comentario}}</td>
-                <td><audio controls="controls ">
-                  <source class="bg-dark" src="{{asset('storage/archivos/'.$value->archivo)}}" type="audio/ogg" />
-                  <source src="{{asset('storage/archivos/'.$value->archivo)}}" type="audio/mpeg" />
-                  </audio></td>
+                <td>@if ($value->archivo)
+                  <audio controls="controls ">
+                    <source class="bg-dark" src="{{asset('storage/archivos/'.$value->archivo)}}" type="audio/ogg" />
+                    <source src="{{asset('storage/archivos/'.$value->archivo)}}" type="audio/mpeg" />
+                    </audio>
+                  @else {{"No hay archivo"}}
+                @endif</td>
                 <td>{{$value->user->name}}</td>
                 <td>@if ($value->activo==1)
                       {{ "Si"}}
                     @else {{ "No"}}
                     @endif</td>
                 <td><a href="/detallePosteo/{{$value->id}}"><ion-icon name="eye"></ion-icon></a></td>
-                <td><a href="/activarPosteo/{{$value->id}}"><ion-icon name="create"></ion-icon></a></td>
-                <td><a href="/desactivarPosteo/{{$value->id}}"><ion-icon name="trash"></ion-icon></td></a>
+                <td><a href="/activarPosteo/{{$value->id}}"><ion-icon name="thumbs-up"></ion-icon></a></td>
+                <td><a href="/desactivarPosteo/{{$value->id}}"><ion-icon name="thumbs-down"></ion-icon></td></a>
               </tr>
             @endforeach
 

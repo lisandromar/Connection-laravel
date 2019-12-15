@@ -6,10 +6,13 @@
         <div class="card w-100">
             <ul class="list-group list-group-flush">
             <li class="list-group-item ">Comentario: {{$posteo->comentario}}</li>
-            <li class="list-group-item ">Archivo: <audio controls="controls ">
-              <source class="bg-dark" src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/ogg" />
-              <source src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/mpeg" />
-              </audio></li>
+            <li class="list-group-item ">Archivo: @if ($posteo->archivo)
+                  <audio controls="controls ">
+                    <source class="bg-dark" src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/ogg" />
+                    <source src="{{asset('storage/archivos/'.$posteo->archivo)}}" type="audio/mpeg" />
+                    </audio>
+                  @else {{"No hay archivo"}}
+            @endif</li>
             <li class="list-group-item ">Fecha y Hora: {{$posteo->created_at}}</li>
 
 
